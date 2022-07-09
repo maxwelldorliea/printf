@@ -17,9 +17,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (format == NULL && !format[i + 1])
-		return (-1);
-	while (format[i])
+	while (format != NULL && format[i])
 	{
 		if (format[i] != '%')
 		{
@@ -28,21 +26,25 @@ int _printf(const char *format, ...)
 			cnt++;
 			continue;
 		}
+		if (format[i + 1] != '%' && format[i + 1] != 's' && format[i + 1] != 'c')
+		{
+			_putchar(format[i]);
+			_putchar(format[++i]);
+			cnt += 2;
+			i++;
+			continue;
+		}
 
 		func = get_func(format[++i]);
-
 		if ((func) != NULL)
 		{
 			cnt += func(args);
 		}
-
 		else
 		{
-			cnt += 2;
-			_putchar(format[--i]);
-			_putchar(format[++i]);
+			_putchar(format[i]);
+			cnt++;
 		}
-
 		i++;
 	}
 	va_end(args);
