@@ -18,10 +18,12 @@ typedef struct prv
 
 int _printf(const char *format, ...);
 
+int (*get_func(const char id))(va_list);
+
 int _putchar(int ch);
 
 int pr_char(va_list args);
 
-int pr_str(va_list args, int *);
+int pr_str(va_list args);
 
 #endif

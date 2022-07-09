@@ -12,6 +12,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, cnt = 0;
+	int (*func)(va_list);
 	va_list args;
 
 	va_start(args, format);
@@ -28,23 +29,18 @@ int _printf(const char *format, ...)
 			continue;
 		}
 
-		switch (format[++i])
+		func = get_func(format[++i]);
+
+		if ((func) != NULL)
 		{
-			case 'c':
-				cnt++;
-				pr_char(args);
-				break;
-			case 's':
-				pr_str(args, &cnt);
-				break;
-			case '%':
-				cnt++;
-				_putchar(format[i]);
-				break;
-			default:
-				cnt += 2;
-				_putchar(format[--i]);
-				_putchar(format[++i]);
+			cnt += func(args);
+		}
+
+		else
+		{
+			cnt += 2;
+			_putchar(format[--i]);
+			_putchar(format[++i]);
 		}
 
 		i++;

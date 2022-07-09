@@ -1,0 +1,18 @@
+get_func.c: In function ‘get_func’:
+get_func.c:23:13: error: invalid type argument of unary ‘*’ (have ‘int’)
+   23 |   if (id == *(prv[i].id))
+      |             ^~~~~~~~~~~~
+_printf.c: In function ‘_printf’:
+_printf.c:31:8: error: assignment to ‘int’ from ‘int (*)(__va_list_tag *)’ makes integer from pointer without a cast [-Werror=int-conversion]
+   31 |   func = get_func(format[++i]);
+      |        ^
+_printf.c:33:14: error: comparison between pointer and integer [-Werror]
+   33 |   if ((func) != NULL)
+      |              ^~
+_printf.c:35:11: error: called object ‘func’ is not a function or function pointer
+   35 |    cnt += func(args);
+      |           ^~~~
+_printf.c:14:22: note: declared here
+   14 |  int i = 0, cnt = 0, func;
+      |                      ^~~~
+cc1: all warnings being treated as errors
