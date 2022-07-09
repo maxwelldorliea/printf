@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _printf - produces output according to a format
@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
+	if (format == NULL)
+		return (cnt);
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -47,9 +49,6 @@ int _printf(const char *format, ...)
 
 		i++;
 	}
-
 	va_end(args);
-
 	return (cnt);
 }
-

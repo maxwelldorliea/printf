@@ -12,6 +12,9 @@
 int pr_str(va_list args, int *cnt)
 {
 	char *s = va_arg(args, char *);
+
+	if (s == NULL)
+		s = "(null)";
 	*cnt += strlen(s);
 
 	while (*s)
