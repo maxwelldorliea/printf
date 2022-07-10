@@ -4,13 +4,14 @@
 /**
  * pr_bin - prints the binary representation of a number
  * @args: va_list
- * Return: int
+ * Return: unsigned int
  */
 
 
 int pr_bin(va_list args)
 {
-	int num = va_arg(args, int), cnt = 0;
+	unsigned int num = va_arg(args, unsigned int);
+	int cnt = 0;
 	int *ptr = &cnt;
 
 	return (cnvrt_to_bin(num, ptr));
@@ -18,12 +19,12 @@ int pr_bin(va_list args)
 
 /**
  * cnvrt_to_bin - converts decimal to binary
- * @n: int
+ * @n: unsigned int
  * @cnt: int pointer
  * Return: int
  */
 
-int cnvrt_to_bin(int n, int *cnt)
+int cnvrt_to_bin(unsigned int n, int *cnt)
 {
 	if (n / 2)
 		cnvrt_to_bin(n / 2, cnt);

@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct prv - struct prv
@@ -27,6 +28,6 @@ int pr_char(va_list args);
 int pr_str(va_list args);
 
 int pr_bin(va_list args);
-int cnvrt_to_bin(int n, int *cnt);
+int cnvrt_to_bin(unsigned int n, int *cnt);
 
 #endif
