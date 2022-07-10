@@ -40,6 +40,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			if (format[i] == '\0')
+				return (-1);
 			cnt += _putchar(format[i - 1]);
 			cnt += _putchar(format[i]);
 		}
