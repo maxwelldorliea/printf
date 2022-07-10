@@ -26,4 +26,7 @@ int pr_char(va_list args);
 
 int pr_str(va_list args);
 
+int pr_bin(va_list args);
+int cnvrt_to_bin(int n, int *cnt);
+
 #endif
