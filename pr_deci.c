@@ -14,7 +14,7 @@ int pr_dec(va_list args)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		cnt += _putchar('-');
 		num = -1 * num;
 	}
 
