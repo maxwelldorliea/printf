@@ -28,6 +28,11 @@ int pr_char(va_list args);
 int pr_str(va_list args);
 
 int pr_bin(va_list args);
+
 int cnvrt_to_bin(unsigned int n, int *cnt);
+
+int pr_dec(va_list args);
+
+int cnvrt_to_dec(int n, int *cnt);
 
 #endif

@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-
 /**
  * get_func - returns the correct func or null
  * @id: char
@@ -13,10 +12,12 @@ int (*get_func(const char id))(va_list args)
 	prv_t prv[] = {
 		{'c', pr_char},
 		{'s', pr_str},
-		{'b', pr_bin}
+		{'b', pr_bin},
+		{'d', pr_dec},
+		{'i', pr_dec}
 	};
 
-	const int PRV_LEN = 3;
+	const int PRV_LEN = 5;
 	int i = 0;
 
 	while (i < PRV_LEN)
