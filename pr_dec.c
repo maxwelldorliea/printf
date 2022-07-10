@@ -1,45 +1,39 @@
 #include "main.h"
 
 /**
- * Print a decimal in hexadecimal
- * @arguments: The character to print
- * @buf: buffer pointer
- * @ibuf: index for buffer pointer
- * Return: number of chars printed
+ * pr_dec - prints the decimal representation of a number
+ * @args: va_list
+ * Return: int
  */
 
-int print_upx(va_list arguments, char *buf, unsigned int ibuf)
+int pr_dec(va_list args)
 {
-	int int_input, i, isnegative, count, first_digit;
-	char *hexadecimal, *binary;
+	int num = va_arg(args, int);
+	int cnt = 0;
+	int *ptr = &cnt;
 
-	int_input = va_arg(arguments, int);
-	isnegative = 0;
-	if (int_input == 0)
+	if (num < 0)
 	{
-		ibuf = handl_buf(buf, '0', ibuf);
-		return (1);
+		_putchar('-');
+		num = -1 * num;
 	}
-	if (int_input < 0)
-	{
-		int_input = (int_input * -1) - 1;
-		isnegative = 1;
-	}
-	binary = malloc(sizeof(char) * (32 + 1));
-	binary = fill_binary_array(binary, int_input, isnegative, 32);
-	hexadecimal = malloc(sizeof(char) * (8 + 1));
-	hexadecimal = fill_hex_array(binary, hexadecimal, 1, 8);
-	for (first_digit = i = count = 0; hexadecimal[i]; i++)
-	{
-		if (hexadecimal[i] != '0' && first_digit == 0)
-			first_digit = 1;
-		if (first_digit)
-		{
-			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
-			count++;
-		}
-	}
-	free(binary);
-	free(hexadecimal);
-	return (count);
+
+	return (cnvrt_to_dec(num, ptr));
+}
+
+/**
+ * cnvrt_to_dec - converts to decimal
+ * @n: int
+ * @cnt: int pointer
+ * Return: int
+ */
+
+int cnvrt_to_dec(int n, int *cnt)
+{
+	if (n / 10)
+		cnvrt_to_dec(n / 10, cnt);
+
+	*cnt += _putchar((n % 10) + '0');
+
+	return (*cnt);
 }
