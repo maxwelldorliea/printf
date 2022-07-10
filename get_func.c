@@ -12,10 +12,11 @@ int (*get_func(const char id))(va_list args)
 {
 	prv_t prv[] = {
 		{'c', pr_char},
-		{'s', pr_str}
+		{'s', pr_str},
+		{'b', pr_bin}
 	};
 
-	const int PRV_LEN = 2;
+	const int PRV_LEN = 3;
 	int i = 0;
 
 	while (i < PRV_LEN)
