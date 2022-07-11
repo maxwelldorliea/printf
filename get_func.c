@@ -14,10 +14,14 @@ int (*get_func(const char id))(va_list args)
 		{'s', pr_str},
 		{'b', pr_bin},
 		{'d', pr_dec},
-		{'i', pr_dec}
+		{'i', pr_dec},
+		{'u', pr_un_int},
+		{'o', pr_octa},
+		{'x', pr_hex},
+		{'X', pr_heX}
 	};
 
-	const int PRV_LEN = 5;
+	const int PRV_LEN = 9;
 	int i = 0;
 
 	while (i < PRV_LEN)
