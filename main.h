@@ -49,4 +49,7 @@ int get_base_len(int n, int b);
 
 int pr_non_prt(va_list args);
 
+int pr_rev(va_list args);
+int get_str_len(char *s);
+
 #endif
