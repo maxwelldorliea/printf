@@ -21,14 +21,16 @@ int pr_non_prt(va_list args)
 
 		if ((n > 0 && n < 32) || n >= 127)
 		{
-			int c = 0;
+			int c = 0, len;
 			int *ptr = &c;
 
 			cnt += _putchar('\\');
 			cnt += _putchar('x');
-			cnt += _putchar('0');
+			len = cnvrt_to_heX(n, 0, ptr);
 
-			cnt += cnvrt_to_heX(n, ptr);
+			if (len != 2)
+				cnt += _putchar('0');
+			cnt += cnvrt_to_heX(n, 1, ptr);
 			i++;
 			continue;
 		}

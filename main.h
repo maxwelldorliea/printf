@@ -43,7 +43,7 @@ int pr_hex(va_list args);
 int cnvrt_to_hex(unsigned int n, int *cnt);
 
 int pr_heX(va_list args);
-int cnvrt_to_heX(unsigned int n, int *cnt);
+int cnvrt_to_heX(unsigned int n, int pr, int *cnt);
 
 int pr_non_prt(va_list args);
 
