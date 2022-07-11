@@ -18,10 +18,11 @@ int (*get_func(const char id))(va_list args)
 		{'u', pr_un_int},
 		{'o', pr_octa},
 		{'x', pr_hex},
-		{'X', pr_heX}
+		{'X', pr_heX},
+		{'S', pr_non_prt}
 	};
 
-	const int PRV_LEN = 9;
+	const int PRV_LEN = 10;
 	int i = 0;
 
 	while (i < PRV_LEN)
