@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * pr_dec - prints the decimal representation of a number
@@ -8,15 +9,12 @@
 
 int pr_dec(va_list args)
 {
-	int num = va_arg(args, int);
+	int num = va_arg(args, unsigned int);
 	int cnt = 0;
 	int *ptr = &cnt;
 
 	if (num < 0)
-	{
 		cnt += _putchar('-');
-		num = -1 * num;
-	}
 
 	return (cnvrt_to_dec(num, ptr));
 }
@@ -30,6 +28,19 @@ int pr_dec(va_list args)
 
 int cnvrt_to_dec(int n, int *cnt)
 {
+	if (n < 0 && n == INT_MIN)
+	{
+		unsigned int num = n * -1;
+
+		if (num / 10)
+			cnvrt_to_dec(num / 10, cnt);
+		*cnt += _putchar((num % 10) + '0');
+		return (*cnt);
+	}
+
+	if (n < 0)
+		n *= -1;
+
 	if (n / 10)
 		cnvrt_to_dec(n / 10, cnt);
 
