@@ -14,17 +14,7 @@ int pr_rot13(va_list args)
 	int i, cnt = 0;
 
 	if (s == NULL)
-	{
 		s = "(null)";
-
-		while (*s)
-		{
-			cnt += _putchar(*s);
-			s++;
-		}
-
-		return (cnt);
-	}
 
 	while (*s)
 	{
@@ -36,6 +26,9 @@ int pr_rot13(va_list args)
 				break;
 			}
 		}
+
+		if (!alpha[i])
+			cnt += _putchar(s[i]);
 
 		s++;
 	}

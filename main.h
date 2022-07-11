@@ -53,4 +53,7 @@ int pr_rev(va_list args);
 int get_str_len(char *s);
 
 int pr_rot13(va_list args);
+
+int pr_ptr(va_list args);
+
 #endif
