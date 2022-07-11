@@ -20,10 +20,11 @@ int (*get_func(const char id))(va_list args)
 		{'x', pr_hex},
 		{'X', pr_heX},
 		{'S', pr_non_prt},
-		{'r', pr_rev}
+		{'r', pr_rev},
+		{'R', pr_rot13}
 	};
 
-	const int PRV_LEN = 11;
+	const int PRV_LEN = 12;
 	int i = 0;
 
 	while (i < PRV_LEN)
