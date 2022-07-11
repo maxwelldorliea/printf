@@ -28,7 +28,7 @@ int pr_rot13(va_list args)
 		}
 
 		if (!alpha[i])
-			cnt += _putchar(s[i]);
+			cnt += _putchar(*s);
 
 		s++;
 	}
