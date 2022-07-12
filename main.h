@@ -16,7 +16,6 @@ typedef struct prv
 	int (*f)(va_list args);
 } prv_t;
 
-
 int _printf(const char *format, ...);
 
 int (*get_func(const char id))(va_list);
@@ -34,7 +33,7 @@ int pr_dec(va_list args);
 int cnvrt_to_dec(int n, int *cnt);
 
 int pr_un_int(va_list args);
-int cnvrt_to_un_int(unsigned int n, int *cnt);
+int cnvrt_to_unsi_int(unsigned int n, int *cnt);
 
 int pr_octa(va_list args);
 int cnvrt_to_octa(unsigned int n, int *cnt);
