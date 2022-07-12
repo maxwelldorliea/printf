@@ -12,7 +12,7 @@ int pr_unsi_int(va_list args)
 	int cnt = 0;
 	int *ptr = &cnt;
 
-	return (cnvrt_to_un_int(num, ptr));
+	return (cnvrt_to_unsi_int(num, ptr));
 }
 
 /**
