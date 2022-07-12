@@ -20,7 +20,7 @@ int pr_dec(va_list args)
 }
 
 /**
- * cnvrt_to_deci - converts to decimal
+ * cnvrt_to_dec - converts to decimal
  * @n: int
  * @cnt: int pointer
  * Return: int

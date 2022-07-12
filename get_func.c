@@ -15,7 +15,7 @@ int (*get_func(const char id))(va_list args)
 		{'b', pr_bin},
 		{'d', pr_dec},
 		{'i', pr_dec},
-		{'u', pr_unsi_int},
+		{'u', pr_un_int},
 		{'o', pr_octa},
 		{'x', pr_hex},
 		{'X', pr_heX},
