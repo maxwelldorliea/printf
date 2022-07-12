@@ -55,5 +55,6 @@ int get_str_len(char *s);
 int pr_rot13(va_list args);
 
 int pr_ptr(va_list args);
+int cnvrt_to_mem_addr(unsigned long int n, int *ptr);
 
 #endif
