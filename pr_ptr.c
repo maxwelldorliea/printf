@@ -10,11 +10,11 @@
 int pr_ptr(va_list args)
 {
 	int cnt = 0;
-	unsigned long int addr = (unsigned long int)va_arg(args, void *);
+	unsigned long int addr = va_arg(args, unsigned long int);
 
 	if (addr == 0)
 	{
-		char *s = "(null)";
+		char *s = "(nil)";
 
 		while (*s)
 		{
