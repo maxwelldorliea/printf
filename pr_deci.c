@@ -2,7 +2,7 @@
 #include <limits.h>
 
 /**
- * pr_deci - prints the decimal representation of a number
+ * pr_dec - prints the decimal representation of a number
  * @args: va_list
  * Return: int
  */
